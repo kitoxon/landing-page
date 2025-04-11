@@ -1,0 +1,135 @@
+export const Feature3 = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      width="512"
+      height="512"
+      x="0"
+      y="0"
+      viewBox="0 0 504 504"
+      className="h-full w-full"
+      enableBackground="new 0 0 512 512"
+    >
+      <g>
+        <path
+          d="m292.026 158.655-80.052 35.69M207.803 288.002l88.394 48.996"
+          fill="none"
+          stroke="#001849"
+          strokeWidth="15"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          data-original="#000000"
+          opacity="1"
+        />
+        <circle
+          cx="116"
+          cy="222"
+          r="30"
+          fill="none"
+          stroke="#ffce00"
+          strokeWidth="15"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          data-original="#33cccc"
+          opacity="1"
+        />
+        <path
+          d="M56 323.18V312c0-16.569 13.431-30 30-30h60c16.569 0 30 13.431 30 30v11.18"
+          fill="none"
+          stroke="#ffce00"
+          strokeWidth="15"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          data-original="#33cccc"
+          opacity="1"
+        />
+        <circle
+          cx="116"
+          cy="237"
+          r="105"
+          fill="none"
+          stroke="#001849"
+          strokeWidth="15"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          data-original="#000000"
+          opacity="1"
+        />
+        <circle
+          cx="388"
+          cy="101"
+          r="30"
+          fill="none"
+          stroke="#ffce00"
+          strokeWidth="15"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          data-original="#33cccc"
+          opacity="1"
+        />
+        <path
+          d="M328 202.18V191c0-16.569 13.431-30 30-30h60c16.569 0 30 13.431 30 30v11.18"
+          fill="none"
+          stroke="#ffce00"
+          strokeWidth="15"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          data-original="#33cccc"
+          opacity="1"
+        />
+        <path
+          d="M380.945 11.233C326.245 14.862 283 60.381 283 116c0 57.99 47.01 105 105 105 55.619 0 101.138-43.245 104.767-97.945M463 11v60M433 41h60"
+          fill="none"
+          stroke="#001849"
+          strokeWidth="15"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          data-original="#000000"
+          opacity="1"
+        />
+        <circle
+          cx="388"
+          cy="373"
+          r="30"
+          fill="none"
+          stroke="#ffce00"
+          strokeWidth="15"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          data-original="#33cccc"
+          opacity="1"
+        />
+        <path
+          d="M328 474.18V463c0-16.569 13.431-30 30-30h60c16.569 0 30 13.431 30 30v11.18"
+          fill="none"
+          stroke="#ffce00"
+          strokeWidth="15"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          data-original="#33cccc"
+          opacity="1"
+        />
+        <path
+          d="M380.945 283.233C326.245 286.862 283 332.381 283 388c0 57.99 47.01 105 105 105 55.619 0 101.138-43.245 104.767-97.945M463 283v60M433 313h60"
+          fill="none"
+          stroke="#001849"
+          strokeWidth="15"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
+          data-original="#000000"
+          opacity="1"
+        />
+      </g>
+    </svg>
+  );
+};

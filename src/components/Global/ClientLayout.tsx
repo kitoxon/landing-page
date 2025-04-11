@@ -1,0 +1,24 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { ContactCTASection } from "../Sections/ContactCTASection";
+
+export default function ClientLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const pathname = usePathname();
+  const isStudio = pathname?.startsWith("/studio");
+
+  return (
+    <>
+      {!isStudio && <Navbar />}
+      {children}
+      {!isStudio && <ContactCTASection />}
+      {!isStudio && <Footer />}
+    </>
+  );
+}
