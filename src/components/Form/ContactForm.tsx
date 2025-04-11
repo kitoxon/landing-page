@@ -294,7 +294,7 @@ export const ContactForm = ({ onSuccess }: props) => {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-[#001849] text-white font-semibold py-3 rounded-md hover:translate-y-1 transform transition-transform duration-300"
+        className="w-full bg-[#001849] text-white font-semibold py-3 rounded-md hover:translate-y-1 transform transition-transform duration-300 cursor-pointer"
       >
         {loading ? (
           <div className="flex items-center justify-center gap-2">

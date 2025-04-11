@@ -18,8 +18,7 @@ export async function POST(req: Request) {
   function renderTemplate(template: string) {
     return template
       .replace(/{{company}}/g, company || "")
-      .replace(/{{name}}/g, lastName + firstName || "")
-      .replace(/{{email}}/g, email || "")
+      .replace(/{{name}}/g, firstName || "")
       .replace(/{{year}}/g, year.toString());
   }
   const transporter = nodemailer.createTransport({

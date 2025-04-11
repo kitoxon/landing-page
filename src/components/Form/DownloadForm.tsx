@@ -9,7 +9,10 @@ type formData = {
   phone: string;
   inquiryType: string;
 };
-export const DownloadForm = () => {
+type props = {
+  onSuccess?: () => void;
+};
+export const DownloadForm = ({ onSuccess }: props) => {
   const [formData, setFormData] = useState<formData>({
     name: "",
     company: "",
@@ -27,10 +30,41 @@ export const DownloadForm = () => {
   const [loading, setLoading] = useState(false);
   const [agree, setAgree] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle submission logic here
-    console.log("Form submitted");
+    setLoading(true);
+    try {
+      const preFormData = new FormData();
+      preFormData.append("company", formData.company);
+      preFormData.append("name", formData.name);
+      preFormData.append("email", formData.email);
+      preFormData.append("phone", formData.phone);
+      preFormData.append("inquiryType", formData.inquiryType);
+      const res = await fetch("/api/download", {
+        method: "POST",
+        body: preFormData,
+      });
+      const result = await res.json();
+      if (result.success) {
+        showSuccess("送信されました。ありがとうございました！");
+        setFormData({
+          company: "",
+          name: "",
+          email: "",
+          phone: "",
+          inquiryType: "",
+        });
+        if (onSuccess) {
+          onSuccess();
+        }
+      } else {
+        showError("送信に失敗しました。");
+      }
+    } catch (error) {
+      showError("送信に失敗しました。");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -158,7 +192,7 @@ export const DownloadForm = () => {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-[#001849] text-white font-semibold py-3 rounded-md hover:translate-y-1 transform transition-transform duration-300"
+        className="w-full bg-[#001849] text-white font-semibold py-3 rounded-md hover:translate-y-1 transform transition-transform duration-300 cursor-pointer"
       >
         {loading ? (
           <div className="flex items-center justify-center gap-2">

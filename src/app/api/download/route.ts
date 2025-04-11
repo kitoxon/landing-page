@@ -7,7 +7,9 @@ export async function POST(req: Request) {
   const email = formData.get("email") as string;
   const name = formData.get("name") as string;
   const company = formData.get("company") as string;
-
+  const phone = formData.get("phone") as string;
+  const inquiryType = formData.get("inquiryType") as string;
+  const year = new Date().getFullYear();
   const template = await client.fetch(
     `*[_type == "emailTemplate" && slug.current == "bi-download-confirmation"][0]`,
   );
@@ -17,27 +19,43 @@ export async function POST(req: Request) {
   function renderTemplate(template: string) {
     return template
       .replace(/{{company}}/g, company || "")
-      .replace(/{{name}}/g, name || "");
+      .replace(/{{name}}/g, name || "")
+      .replace(/{{year}}/g, year.toString());
   }
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    service: "gmail", // or 'SendinBlue', 'Mailgun', etc.
     auth: {
       user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASSWORD,
+      pass: process.env.EMAIL_PASS,
     },
   });
-
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: email,
-    subject: "Download Brand Insight",
-    text: "Thank you for downloading Brand Insight!",
+  const emailText = renderTemplate(template.body);
+  const mailOptions: any = {
+    from: `"${name}" <${email}>`,
+    to: "munkhjin@nextstairs.co.jp",
+    subject: template.subject,
+    text: emailText,
   };
-
   try {
     await transporter.sendMail(mailOptions);
-    return NextResponse.json({ message: "Email sent successfully" });
-  } catch (error) {
-    return NextResponse.json({ message: "Email sending failed" });
+    await transporter.sendMail({
+      from: `Brand Insight(ブランドインサイト) <${process.env.EMAIL_USER}>`,
+      to: email, // 👈 customer email
+      subject: template.subject,
+      text: emailText,
+    });
+
+    await client.create({
+      _type: "bi_download",
+      company,
+      name,
+      email,
+      phone,
+      inquiryType,
+    });
+    return NextResponse.json({ success: true });
+  } catch (err) {
+    console.error("Email send error:", err);
+    return NextResponse.json({ success: false }, { status: 500 });
   }
 }

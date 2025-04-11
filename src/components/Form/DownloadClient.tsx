@@ -6,7 +6,10 @@ import { House, Download } from "lucide-react";
 import { PrimaryButton } from "../Global/PrimaryButton";
 export const DownloadClient = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-
+  const onSuccess = () => {
+    setIsSubmitted(true);
+    scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <div>
       {isSubmitted && (
@@ -44,7 +47,7 @@ export const DownloadClient = () => {
             送信後、サービスの詳細資料をダウンロードいただけます。
           </p>
           <div className="flex-2 w-auto h-auto max-w-full flex justify-center">
-            <DownloadForm />
+            <DownloadForm onSuccess={onSuccess} />
           </div>
         </div>
       )}
