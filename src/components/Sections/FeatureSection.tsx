@@ -6,19 +6,13 @@ import { Feature3 } from "../Icons/Feature3";
 import { Feature4 } from "../Icons/Feature4";
 export const FeatureSection = () => {
   return (
-    <div className="p-20 relative overflow-hidden">
-      <div className="flex">
-        <div className="flex items-start gap-[10px] w-1/4">
-          <h2
-            className="text-7xl font-semibold text-[#001849] leading-none font-barlow tracking-tight"
-            style={{ writingMode: "vertical-lr" }}
-          >
+    <div className="md:p-20 py-20 px-[15px] relative overflow-hidden">
+      <div className="flex flex-col md:flex-row gap-[60px] md:gap-0">
+        <div className="flex md:items-start items-center gap-[10px] md:w-1/4 flex-col md:flex-row">
+          <h2 className="md:text-7xl text-5xl font-semibold text-[#001849] leading-none font-barlow tracking-tight writing-switch">
             FEATURE
           </h2>
-          <p
-            className="text-[#001849] text-lg tracking-widest"
-            style={{ writingMode: "vertical-lr" }}
-          >
+          <p className="text-[#001849] text-lg tracking-widest writing-switch">
             私たちの特長
           </p>
         </div>

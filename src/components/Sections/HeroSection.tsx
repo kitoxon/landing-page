@@ -9,7 +9,7 @@ export const HeroSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   return (
     <section className="px-6 md:px-20 pt-20 bg-[url(/assets/hero-bg.svg)] bg-cover bg-center relative">
-      <div className="w-full mx-auto flex flex-row items-center justify-between gap-20 py-[50px]">
+      <div className="w-full mx-auto flex flex-row items-center justify-between gap-20 md:py-[50px] py-32">
         {/* Left Text Block */}
         <div className="w-[500px] flex flex-col gap-8">
           <h1 className="text-[#001849] text-4xl md:text-5xl font-bold leading-[1.4]">
@@ -18,7 +18,7 @@ export const HeroSection = () => {
             定量的なROIデータを把握することができる
           </h1>
 
-          <div className="flex gap-5">
+          <div className="hidden md:flex gap-5">
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: [0, 1.1, 1] }}
@@ -63,7 +63,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: [0, 1.1, 1] }}
           transition={{ duration: 1, ease: [0.4, 0.4, 0, 1], delay: 0.2 }}
-          className="w-[450px]"
+          className="w-[450px] hidden md:block"
         >
           {isSubmitted && <HeroClient />}
           {!isSubmitted && <HeroForm onSuccess={() => setIsSubmitted(true)} />}
@@ -71,7 +71,7 @@ export const HeroSection = () => {
       </div>
 
       <Image
-        className="absolute left-[450px] bottom-[-150px] z-[-1] animate-spin-slow"
+        className="absolute md:left-[450px] left-[100px] bottom-[-150px] z-[-1] animate-spin-slow"
         src="assets/hero-blue-circle.svg"
         alt="Blue Circle"
         width={350}

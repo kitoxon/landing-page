@@ -34,10 +34,10 @@ export const ServiceItem = ({
         <img
           src={img_url}
           alt="Service Icon"
-          className="h-full w-full absolute rounded-[10px] object-cover object-center"
+          className="h-full w-full md:absolute rounded-[10px] object-cover object-center"
         />
       </div>
-      <div className="py-20 px-10 rounded-xl bg-white text-left max-w-[45%] flex flex-col gap-5 w-full h-auto">
+      <div className="md:py-20 md:px-10 py-10 px-5 rounded-xl bg-white text-left md:max-w-[45%] flex flex-col gap-5 w-full h-auto">
         <h3 className="text-[#001849] text-2xl font-semibold leading-[1.4]">
           {title}
         </h3>

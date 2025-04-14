@@ -41,14 +41,14 @@ export const ProcessSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.2 });
   return (
-    <div className="p-20">
-      <div className="flex">
+    <div className="md:p-20 py-20 px-[15px]">
+      <div className="flex flex-col-reverse md:flex-row gap-[60px] md:gap-0">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={divVariants}
-          className="bg-white rounded-[10px] [box-shadow:10px_10px_15px_rgba(0,0,0,0.1)] max-w-3/4 w-full"
+          className="bg-white rounded-[10px] [box-shadow:10px_10px_15px_rgba(0,0,0,0.1)] md:max-w-3/4 w-full"
         >
           {steps.map((step, idx) => (
             <ProcessItem
@@ -61,17 +61,11 @@ export const ProcessSection = () => {
             />
           ))}
         </motion.div>
-        <div className="flex justify-end gap-[10px] w-1/4">
-          <p
-            className="text-[#001849] text-lg tracking-widest"
-            style={{ writingMode: "vertical-lr" }}
-          >
+        <div className="flex justify-end md:items-start gap-[10px] md:w-1/4 flex-col-reverse md:flex-row items-center">
+          <p className="text-[#001849] text-lg tracking-widest writing-switch">
             ご利用の流れ
           </p>
-          <h2
-            className="text-7xl font-semibold text-[#001849] leading-none tracking-tight font-barlow"
-            style={{ writingMode: "vertical-lr" }}
-          >
+          <h2 className="md:text-7xl text-5xl font-semibold text-[#001849] leading-none tracking-tight font-barlow writing-switch">
             PROCESS
           </h2>
         </div>

@@ -209,7 +209,7 @@ export const ContactForm = ({ onSuccess }: props) => {
         />
       </div>
       {/* Phase */}
-      <div className="w-[500px]">
+      <div className="w-[500px] max-w-full">
         <label className="font-semibold text-custom block mb-[10px]">
           お問い合わせ内容 <span className="text-red-500">*</span>
         </label>

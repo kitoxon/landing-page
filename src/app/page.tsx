@@ -13,7 +13,7 @@ import { ContactCTASection } from "@/components/Sections/ContactCTASection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-hidden">
       <section id="hero">
         <HeroSection />
       </section>

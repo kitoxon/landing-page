@@ -43,7 +43,7 @@ export const ProcessItem = ({
     >
       <div className="flex items-start gap-4 px-5">
         {/* Number */}
-        <div className="text-[#001849] font-barlow font-medium [font-variant-numeric:tabular-nums] text-[126px] leading-none min-w-[65px]">
+        <div className="text-[#001849] font-barlow font-medium [font-variant-numeric:tabular-nums] md:text-[126px] pt-[14px] md:pt-0 text-[90px] leading-none min-w-[65px]">
           {number}
         </div>
 

@@ -25,6 +25,17 @@ body {
   font-family:
     var(--font-inter), var(--font-noto), var(--font-barlow), sans-serif;
 }
+.writing-switch {
+  writing-mode: horizontal-tb;
+}
+
+/* desktop = vertical */
+@media (min-width: 768px) {
+  .writing-switch {
+    writing-mode: vertical-lr; /* or vertical-lr */
+  }
+}
+
 @theme {
   --text-custom: 15px;
   --shadow-3xl: 0 35px 35px rgba(0, 0, 0, 0.25);

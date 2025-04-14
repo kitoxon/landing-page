@@ -31,7 +31,7 @@ const FAQItem = ({ question, answer, isFirst }: FAQItem) => {
           <span className="w-10 h-10 rounded-full text-2xl flex items-center leading-none justify-center bg-[#001849] text-white font-semibold font-barlow">
             Q
           </span>
-          <p className="font-semibold text-[#001849] leading-[1.4] text-lg">
+          <p className="font-semibold text-[#001849] leading-[1.4] text-lg text-left">
             {question}
           </p>
         </div>
@@ -87,7 +87,7 @@ export const FAQSection = () => {
   ];
 
   return (
-    <div className="p-20 flex">
+    <div className="md:p-20 py-20 px-[15px] flex flex-col-reverse md:flex-row gap-[60px] md:gap-0">
       <div className="flex-1">
         {faqItems.map((item, index) => (
           <FAQItem
@@ -99,17 +99,11 @@ export const FAQSection = () => {
         ))}
       </div>
 
-      <div className="flex justify-end gap-[10px] w-1/4">
-        <p
-          className="text-[#001849] text-lg tracking-widest"
-          style={{ writingMode: "vertical-lr" }}
-        >
+      <div className="flex justify-end md:items-start gap-[10px] md:w-1/4 flex-col-reverse md:flex-row items-center">
+        <p className="text-[#001849] text-lg tracking-widest writing-switch">
           よくあるご質問
         </p>
-        <h2
-          className="text-7xl font-semibold text-[#001849] leading-none font-barlow tracking-tight"
-          style={{ writingMode: "vertical-lr" }}
-        >
+        <h2 className="md:text-7xl text-5xl font-semibold text-[#001849] leading-none font-barlow tracking-tight writing-switch">
           FAQ
         </h2>
       </div>

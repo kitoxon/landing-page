@@ -64,7 +64,7 @@ export default function RootLayout({
       className={`${inter.variable} ${noto.variable} ${barlow.variable}`}
     >
       <body className="font-sans">
-        <div className="bg-[url(/assets/background.jpg)] bg-cover bg-center h-screen fixed w-full z-[-3]"></div>
+        <div className="bg-[url(/assets/background.jpg)] bg-cover bg-center h-full md:h-screen fixed w-full z-[-3]"></div>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

@@ -10,18 +10,18 @@ export const AboutSection = () => {
   });
   return (
     <section>
-      <div className="w-full pb-20 px-20">
+      <div className="w-full md:pb-20 md:px-20 p-[15px] md:pt-0">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={divVariants}
-          className="rounded-[10px] shadow-custom px-10 py-20 bg-white text-center"
+          className="rounded-[10px] shadow-custom px-[15px] md:px-10 py-20 bg-white text-center"
         >
-          <h2 className="text-[28px] font-semibold leading-[1.4] mb-10 p-5 text-[#001849]">
+          <h2 className="text-[20px] md:text-[28px] font-bold md:font-semibold leading-[2] md:leading-[1.4] mb-10 p-5 text-[#001849]">
             インサイトを通じて、 あらゆる スポーツの価値を高める。
           </h2>
-          <p className="text-lg leading-[2.4] text-[#111111]">
+          <p className="text-[12px] md:text-lg md:leading-[2.4] leading-[3.4] break-keep text-[#111111]">
             スポーツの価値を 高める旅路には、 多くの挑戦が伴います。
             <br />
             私たちは、 スポーツチームが 自信を持って 前に突き進むことが

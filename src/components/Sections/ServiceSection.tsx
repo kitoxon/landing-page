@@ -29,10 +29,10 @@ export const ServiceSection = () => {
     },
   ];
   return (
-    <div className="p-20 w-full">
+    <div className="md:p-20 py-20 px-[15px] w-full">
       <div className="text-center">
         <div className="mb-[60px]">
-          <h2 className="text-7xl font-semibold leading-none mb-4 text-[#001849] font-barlow">
+          <h2 className="md:text-7xl text-5xl font-semibold leading-none mb-4 text-[#001849] font-barlow">
             SERVICE
           </h2>
           <p className="text-lg leading-[1.4]">ご提供サービス</p>

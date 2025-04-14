@@ -18,10 +18,10 @@ export default function Footer() {
     }
   };
   return (
-    <footer className="bg-[#001849] px-20 pt-20 pb-10 text-white">
-      <div className="flex flex-row gap-20">
+    <footer className="bg-[#001849] md:px-20 px-[15px] pt-20 pb-10 text-white">
+      <div className="flex md:flex-row flex-col md:gap-20 gap-10">
         {/* Left-side content */}
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <div onClick={navigateTop} className="cursor-pointer w-fit">
             <Image
               src="/assets/white-logo.webp"
@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
 
         {/* Right-side links */}
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <ul className="flex flex-col divide-y divide-gray-200 cursor-pointer mb-8">
             {footerlinks.map((link) => (
               <li key={link.href} className="group">

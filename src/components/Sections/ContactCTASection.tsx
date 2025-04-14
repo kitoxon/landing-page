@@ -23,8 +23,8 @@ export const ContactCTASection = () => {
     amount: 0.8,
   });
   return (
-    <div className="px-20 relative">
-      <div className="flex relative rounded-[10px] w-full overflow-hidden bg-white z-0">
+    <div className="md:px-20 px-[15px] relative">
+      <div className="flex flex-col md:flex-row relative rounded-[10px] w-full overflow-hidden bg-white z-0">
         <AnimatePresence>
           <motion.div
             ref={ref}
@@ -35,14 +35,14 @@ export const ContactCTASection = () => {
             className="bg-[#ffce00ff] absolute top-0 left-0 w-full h-full z-[-1]"
           ></motion.div>
         </AnimatePresence>
-        <div className="w-1/2 flex flex-col justify-center px-12 py-16">
-          <h2 className="text-[#001849] text-3xl font-semibold leading-[1.4]">
+        <div className="md:w-1/2 flex flex-col justify-center md:px-12 md:py-16 pt-10 pb-5 px-5">
+          <h2 className="text-[#001849] md:text-3xl text-2xl font-semibold leading-[1.4]">
             些細なことでも構いません。
             <br /> まずはお話を聞かせてください。
           </h2>
         </div>
 
-        <div className="w-1/2 flex gap-6 px-6 py-10">
+        <div className="md:w-1/2 flex flex-col md:flex-row gap-6 md:px-6 md:py-10 py-5 px-5">
           {/* First Card */}
 
           <div className="flex flex-col gap-5 rounded-[10px] bg-white shadow-custom overflow-hidden">

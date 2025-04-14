@@ -1,7 +1,7 @@
 import { fetchNews } from "@/sanity/lib/fetchNews"; // your fetch logic
 import { EmblaCarousel } from "../News/EmblaCarousel";
 export const NewsSection = async () => {
-  const news = await fetchNews();
+  const news = await fetchNews(4);
 
   return (
     <div>

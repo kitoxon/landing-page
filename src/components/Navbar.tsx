@@ -10,6 +10,7 @@ import { HamburgMenu } from "./Global/HamburgMenu";
 import { useEffect, useState } from "react";
 import { Overlay } from "./Global/Overlay";
 import { motion, AnimatePresence } from "framer-motion";
+import { useMediaQuery } from "@/app/utils";
 export default function Navbar() {
   const navLinks = links.filter((link) => link.nav === true);
   const pathname = usePathname();
@@ -24,6 +25,17 @@ export default function Navbar() {
   const close = () => {
     setIsOpen(false);
   };
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  useEffect(() => {
+    if (isOpen && isMobile) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen, isMobile]);
   useEffect(() => {
     if (!isOpen) {
       const timer = setTimeout(() => setIsMounted(false), 300);
@@ -41,17 +53,17 @@ export default function Navbar() {
   };
   return (
     <nav className="fixed top-0 w-full z-10">
-      <div className="w-full mx-auto pl-10 h-20">
+      <div className="w-full mx-auto pl-[15px] md:pl-10 md:h-20 h-[70px]">
         <div className="flex justify-between items-center h-full">
           <div onClick={navigateTop} className="cursor-pointer">
             <Image src="/assets/logo.webp" alt="Logo" width={222} height={70} />
           </div>
 
           <div
-            className="h-full bg-white flex items-center px-10 rounded-bl-[10px] [box-shadow:10px_10px_15px_rgba(0,0,0,0.1)] text-[15px] leading-[1.4] gap-[30px]"
+            className="h-full bg-white flex items-center px-[15px] md:px-10 rounded-bl-[10px] [box-shadow:10px_10px_15px_rgba(0,0,0,0.1)] text-[15px] leading-[1.4] gap-[30px]"
             id="navbarNav"
           >
-            <ul className="flex space-x-6">
+            <ul className="hidden md:flex space-x-6">
               {navLinks.map((link) => (
                 <li key={link.title}>
                   <EnhancedNavLink
@@ -63,7 +75,7 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <div className="flex gap-[10px]">
+            <div className="hidden md:flex gap-[10px]">
               <PrimaryButton
                 text="資料ダウンロード"
                 className="w-[180px]"
@@ -93,7 +105,7 @@ export default function Navbar() {
                           exit={{ opacity: 0, x: "100%" }}
                           transition={{ duration: 0.3, ease: [0.4, 0.4, 0, 1] }}
                           onMouseDown={(e) => e.stopPropagation()}
-                          className="fixed top-0 right-0 w-full max-w-1/2 h-full bg-white shadow-lg pt-8 px-10 z-[50px] rounded-tl-[10px] rounded-bl-[10px]"
+                          className="fixed top-0 right-0 w-full md:max-w-1/2 h-full bg-white shadow-lg pt-8 md:px-10 px-[15px] z-[50px] rounded-tl-[10px] rounded-bl-[10px]"
                         >
                           <HamburgMenu
                             isHomePage={isHomepage}

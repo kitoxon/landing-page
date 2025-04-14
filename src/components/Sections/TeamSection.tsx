@@ -4,18 +4,12 @@ import { MemberItem } from "../Global/MemberItem";
 export const TeamSection = async () => {
   const members = await fetchMembers();
   return (
-    <div className="p-20 flex">
-      <div className="flex items-start gap-[10px] w-1/4">
-        <h2
-          className="text-7xl font-semibold text-[#001849] font-barlow leading-none tracking-tight"
-          style={{ writingMode: "vertical-lr" }}
-        >
+    <div className="md:p-20 py-20 px-[15px] flex flex-col md:flex-row gap-[60px] md:gap-0">
+      <div className="flex md:items-start gap-[10px] md:w-1/4 flex-col items-center">
+        <h2 className="md:text-7xl text-5xl font-semibold text-[#001849] font-barlow leading-none tracking-tight writing-switch">
           TEAM
         </h2>
-        <p
-          className="text-[#001849] text-lg tracking-widest"
-          style={{ writingMode: "vertical-lr" }}
-        >
+        <p className="text-[#001849] text-lg tracking-widest writing-switch">
           チーム
         </p>
       </div>

@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { Overlay } from "./Overlay";
 import { PortableText } from "next-sanity";
 import { X } from "lucide-react";
+import { useMediaQuery } from "@/app/utils";
 type props = {
   member: {
     name: string;
@@ -20,15 +21,15 @@ type props = {
 };
 const MemberDetail = ({ member, onClose }: props) => {
   return (
-    <div className="h-[50vh] bg-white rounded-tl-[10px] rounded-tr-[10px] [box-shadow:0px_6px_15px_0px_rgba(0,0,0,0.2)] p-10 w-full max-w-full">
+    <div className="h-[50vh] bg-white rounded-tl-[10px] overflow-auto rounded-tr-[10px] [box-shadow:0px_6px_15px_0px_rgba(0,0,0,0.2)] md:p-10 p-5 w-full max-w-full">
       <button
         className="absolute -top-10 right-5 cursor-pointer"
         onClick={onClose}
       >
         <X color="#fff" />
       </button>
-      <div className="flex gap-10 p-5 w-full">
-        <div className="flex flex-col w-1/2">
+      <div className="flex gap-10 p-5 w-full md:flex-row flex-col overflow-auto">
+        <div className="flex flex-col md:w-1/2">
           <Image
             src={member.photo}
             alt={member.name}
@@ -44,7 +45,7 @@ const MemberDetail = ({ member, onClose }: props) => {
             <p className="text-custom text-[#000000ff] mt-1">{member.role}</p>
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <div className="text-custom text-[#000000ff] leading-[2]">
             {Array.isArray(member.bio) && <PortableText value={member.bio} />}
           </div>
@@ -73,7 +74,17 @@ export const MemberItem = ({ member }: props) => {
     }
   }, [isOpen]);
   const toggleMenu = () => setIsOpen(!isOpen);
-
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  useEffect(() => {
+    if (isOpen && isMobile) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen, isMobile]);
   return (
     <div>
       <motion.div

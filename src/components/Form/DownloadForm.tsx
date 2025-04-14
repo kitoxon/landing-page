@@ -135,7 +135,7 @@ export const DownloadForm = ({ onSuccess }: props) => {
       </div>
 
       {/* Phase */}
-      <div className="w-[500px]">
+      <div className="w-[500px] max-w-full">
         <label className="font-semibold text-custom block mb-[10px]">
           検討フェーズ <span className="text-red-500">*</span>
         </label>

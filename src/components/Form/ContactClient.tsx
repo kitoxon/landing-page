@@ -35,7 +35,7 @@ export const ContactClient = () => {
         </div>
       )}
       {!isSubmitted && (
-        <div className="flex">
+        <div className="flex flex-col md:flex-row gap-[60px] md:gap-0">
           <p className="text-custom flex-1 text-[#000000ff] leading-8">
             こちらのお問い合わせフォームに必要事項をご記入の上、送信ボタンを押してください。
             <br />

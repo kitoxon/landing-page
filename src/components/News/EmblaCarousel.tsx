@@ -90,7 +90,7 @@ export const EmblaCarousel = ({
   return (
     <div className="relative mx-auto py-20">
       <div className="mb-[60px] text-center">
-        <h2 className="text-7xl font-semibold leading-none text-[#001849] font-barlow uppercase mb-[10px]">
+        <h2 className="md:text-7xl text-5xl font-semibold leading-none text-[#001849] font-barlow uppercase mb-[10px]">
           {header}
         </h2>
         <p className="text-lg leading-[1.4]">{headerjp}</p>
@@ -107,11 +107,11 @@ export const EmblaCarousel = ({
         <div className="flex">
           {preparedSlides.map((article, idx) => (
             <div
-              className="relative flex-grow-0 flex-shrink-0 basis-[55%] mx-5"
+              className="relative flex-grow-0 flex-shrink-0 md:basis-[55%] basis-[90%] mx-5 h-auto"
               key={idx}
             >
               {/* Content card with shadow */}
-              <NewsCard article={article} />
+              <NewsCard article={article} href={buttonHref} />
             </div>
           ))}
         </div>
