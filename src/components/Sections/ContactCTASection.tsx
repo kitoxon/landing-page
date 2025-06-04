@@ -63,7 +63,7 @@ export const ContactCTASection = () => {
               <div className="flex justify-center">
                 <PrimaryButton
                   text="資料ダウンロード"
-                  href="/資料ダウンロード"
+                  href="/download"
                   iconComponent={Download}
                   className="w-[180px]"
                 />

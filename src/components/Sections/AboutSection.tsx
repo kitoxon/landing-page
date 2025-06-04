@@ -10,7 +10,7 @@ export const AboutSection = () => {
   });
   return (
     <section>
-      <div className="w-full md:pb-20 md:px-20 p-[15px] md:pt-0">
+      <div className="w-full md:pb-20 md:px-20 p-[15px] md:pt-20">
         <motion.div
           ref={ref}
           initial="hidden"

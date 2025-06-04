@@ -8,14 +8,15 @@ import { NewsSection } from "@/components/Sections/NewsSection";
 import { ProcessSection } from "@/components/Sections/ProcessSection";
 import { ServiceSection } from "@/components/Sections/ServiceSection";
 import { TeamSection } from "@/components/Sections/TeamSection";
-import Image from "next/image";
-import { ContactCTASection } from "@/components/Sections/ContactCTASection";
-
+import { MediaCovSection } from "@/components/Sections/MediaCovSection";
 export default function Home() {
   return (
     <main className="overflow-hidden">
       <section id="hero">
         <HeroSection />
+      </section>
+      <section id="media">
+        <MediaCovSection />
       </section>
       <section id="about">
         <AboutSection />
