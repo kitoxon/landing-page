@@ -4,16 +4,17 @@ import Link from "next/link";
 import { PrimaryButton } from "../Global/PrimaryButton";
 import { Download, Mail } from "lucide-react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import type { Variants, Easing } from "framer-motion";
 import { useRef } from "react";
 export const ContactCTASection = () => {
-  const colorDiv = {
+  const colorDiv: Variants = {
     hidden: { width: 0, left: 0 },
     visible: {
       width: "100%",
       left: 0,
       transition: {
         duration: 1,
-        ease: [0.4, 0.4, 0, 1],
+        ease: [0.4, 0.4, 0, 1] as Easing,
       },
     },
   };
