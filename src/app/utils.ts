@@ -66,15 +66,16 @@ export const links = [
 
 export const divVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: () => ({
+  visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 1,
       ease: [0.4, 0.4, 0, 1],
     },
-  }),
+  },
 };
+
 import { useState, useEffect } from "react";
 export function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(false);
