@@ -13,9 +13,11 @@ export const HeroSection = () => {
         {/* Left Text Block */}
         <div className="w-[500px] flex flex-col gap-8">
           <h1 className="text-[#001849] text-4xl md:text-5xl font-bold leading-[1.4]">
-            スポンサー広告の
+            スポンサーシップの
             <br />
-            定量的なROIデータを把握することができる
+            価値を多角的に把握
+            <br />
+            することができる
           </h1>
 
           <div className="hidden md:flex gap-5">

@@ -7,9 +7,17 @@ type props = {
   to?: string;
   isHomePage?: boolean;
   onClick?: () => void;
+  index?: number;
 };
 
-export const HamburgLink = ({ href, text, onClick, to, isHomePage }: props) => {
+export const HamburgLink = ({
+  href,
+  text,
+  onClick,
+  to,
+  isHomePage,
+  index,
+}: props) => {
   if (isHomePage && to) {
     return (
       <ScrollLink
@@ -18,7 +26,7 @@ export const HamburgLink = ({ href, text, onClick, to, isHomePage }: props) => {
         spy={true}
         smooth={true}
         duration={500}
-        className="flex h-[50px] items-center justify-between text-[15px] cursor-pointer"
+        className="flex h-[45px] items-center justify-between text-[15px] cursor-pointer"
       >
         {text}
         <div className="transform transition-all duration-200 group-hover:translate-x-1">

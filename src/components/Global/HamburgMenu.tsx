@@ -9,6 +9,21 @@ type Props = {
 };
 
 export const HamburgMenu = ({ isHomePage, onClose }: Props) => {
+  const hamburgerLinks = [...links];
+
+  const newsIdx = hamburgerLinks.findIndex((l) => l.menuTitle === "お知らせ");
+  const companyIdx = hamburgerLinks.findIndex(
+    (l) => l.menuTitle === "会社概要",
+  );
+
+  if (newsIdx !== -1 && companyIdx !== -1 && newsIdx !== companyIdx) {
+    const [newsItem] = hamburgerLinks.splice(newsIdx, 1);
+    const newCompanyIdx = hamburgerLinks.findIndex(
+      (l) => l.menuTitle === "会社概要",
+    );
+    hamburgerLinks.splice(newCompanyIdx, 0, newsItem); // insert right before
+  }
+
   return (
     <div>
       {/* Close button inside the menu */}
@@ -18,18 +33,25 @@ export const HamburgMenu = ({ isHomePage, onClose }: Props) => {
         </button>
       </div>
 
-      <ul className="flex flex-col divide-y divide-gray-200 mb-[30px]">
-        {links.map((link) => (
-          <li key={link.href} className="group">
-            <HamburgLink
-              text={link.menuTitle}
-              isHomePage={isHomePage}
-              to={link.to}
-              href={link.href}
-              onClick={onClose} // ✅ Close menu when clicked
-            />
-          </li>
-        ))}
+      <ul className="flex flex-col divide-y divide-black-200 mb-[30px]">
+        {hamburgerLinks.map((link, idx) => {
+          const isFirst = idx === 0;
+          const isLast = idx === hamburgerLinks.length - 1;
+          const borderClasses = `${isFirst ? "border-t" : ""} ${isLast ? "border-b" : ""}`;
+
+          return (
+            <li key={link.href} className={`group ${borderClasses}`}>
+              <HamburgLink
+                index={idx}
+                text={link.menuTitle}
+                isHomePage={isHomePage}
+                to={link.to}
+                href={link.href}
+                onClick={onClose}
+              />
+            </li>
+          );
+        })}
       </ul>
       <div className="flex gap-[10px] mb-10">
         <PrimaryButton
